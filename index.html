@@ -3,129 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda de Peças de Carro</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: white;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: url('carro.jpg') no-repeat center center/cover;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: -1;
-        }
-
-        header {
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 20px 0;
-            font-size: 26px;
-            font-weight: bold;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            text-transform: uppercase;
-        }
-
-        .container {
-            padding: 100px 20px 40px;
-            text-align: center;
-        }
-
-        .lista-pecas {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .peca {
-            background: rgba(0, 123, 255, 0.9);
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 18px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .peca:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
-        }
-
-        .whatsapp-button {
-            margin-top: 30px;
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            display: inline-block;
-        }
-
-        .whatsapp-button:hover {
-            background: #1da851;
-            transform: scale(1.1);
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 15px 0;
-            font-size: 14px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-        }
-    </style>
+    <title>AutoGit - Peças Automotivas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Compre peças automotivas de qualidade na AutoGit. Entre em contato pelo WhatsApp e encontre o que precisa!">
 </head>
 <body>
-
     <header>
-        <span class="logo">Autogit</span> 
-            <p>Encontre o que precisa para o seu carro na AutoGit</p>
+        <div class="logo">AutoGit</div>
+        
     </header>
 
-    <div class="container">
-        <h2>Escolha uma opção e entre em contato</h2>
+    <section class="hero">
+        <h1>Peças Automotivas de Qualidade</h1>
+        <p>Encontre a peça certa para o seu carro com a AutoGit</p>
+    </section>
+
+    <section id="produtos" class="container">
+        <h2>Escolha uma categoria</h2>
         <div class="lista-pecas">
             <a href="#" class="peca" onclick="redirectToWhatsApp('Motor')">Motor</a>
             <a href="#" class="peca" onclick="redirectToWhatsApp('Freios')">Freios</a>
             <a href="#" class="peca" onclick="redirectToWhatsApp('Suspensão')">Suspensão</a>
-            <a href="#" class="peca" onclick="redirectToWhatsApp('Peças')">Peças</a>
+            <a href="#" class="peca" onclick="redirectToWhatsApp('Elétrica')">Elétrica</a>
             <a href="#" class="peca" onclick="redirectToWhatsApp('Outros')">Outros</a>
         </div>
-        <a href="https://wa.me/5511970157937" class="whatsapp-button">Fale Conosco</a>
-    </div>
+        <a href="https://wa.me/5511961488448" class="whatsapp-button">Fale Conosco</a>
+    </section>
 
-    <footer>
+    <footer id="contato">
         <p>Endereço: Rua das Oficinas, 123 - São Paulo, SP</p>
         <p>Telefone: (11) 97015-7937</p>
     </footer>
@@ -135,11 +42,10 @@
             var confirmation = confirm("Você quer mais informações sobre " + itemName + "?");
             if (confirmation) {
                 var encodedItem = encodeURIComponent(itemName);
-                var finalWhatsAppURL = "https://wa.me/5511970157937?text=Olá, estou interessado na peça: " + encodedItem;
+                var finalWhatsAppURL = "https://wa.me/5511961488448?text=Olá, estou interessado na peça: " + encodedItem;
                 window.location.href = finalWhatsAppURL;
             }
         }
     </script>
-
 </body>
 </html>
